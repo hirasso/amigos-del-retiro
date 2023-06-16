@@ -1,0 +1,30 @@
+{
+  "name": "amigos-del-retiro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^0.19.7",
+    "@astrojs/solid-js": "^2.2.0",
+    "@astrojs/tailwind": "^3.1.3",
+    "@solid-primitives/intersection-observer": "^2.1.2",
+    "@swup/fade-theme": "^1.0.5",
+    "@swup/head-plugin": "^1.3.0",
+    "@swup/slide-theme": "^1.0.5",
+    "astro": "^2.6.3",
+    "solid-icons": "^1.0.8",
+    "solid-js": "^1.7.6",
+    "swup": "^3.1.0",
+    "tailwindcss": "^3.3.2"
+  },
+  "description": "``` npm create astro@latest -- --template minimal ```",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,348 @@
+---
+import { Image } from "astro:assets";
+
+import { AiOutlineGoogle } from "solid-icons/ai";
+
+import MainLayout from "../layouts/MainLayout.astro";
+import Navbar from "../layouts/Navbar";
+import ButtonPrimary from "../components/ButtonPrimary.astro";
+import Stars from "../components/Stars.astro";
+
+import heroCover from "/src/assets/retiro-cover.jpg";
+import imgFeature1 from "/src/assets/actividades.jpg";
+import imgFeature2 from "/src/assets/torneos.jpg";
+import imgFeature3 from "/src/assets/simultaneas.jpg";
+import imgFeature4 from "/src/assets/simultaneas.jpg";
+---
+
+<MainLayout title="Inicio" description="" class="">
+  <div class="font-body text-primary-800">
+    <div class="bg-neutral">
+      <Navbar client:only="react" />
+      <header class="lg:h-screen">
+        <Image
+          src={heroCover}
+          alt="Retiro lake"
+          class="top-0 z-[-1] h-[50vh] w-screen rounded-b-[40px] object-cover shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] lg:h-[75%] lg:rounded-b-[50px] xl:rounded-b-[58px] 2xl:rounded-b-[65px]"
+          quality="max"
+          format="avif"
+          loading="eager"
+        />
+        <div class="flex items-center justify-center lg:h-[25%]">
+          <div
+            class="mx-7 flex h-auto flex-col items-center justify-start gap-4 pb-5 pt-4 text-center lg:grid lg:max-w-5xl lg:grid-cols-8 lg:gap-10 xl:max-w-7xl 2xl:max-w-[1450px] 3xl:max-w-[1650px]"
+          >
+            <h1
+              class="font-display text-[31px] font-extrabold leading-9 text-emerald-950 lg:col-span-5 lg:w-[600px] lg:justify-self-end lg:text-[39px] lg:leading-tight xl:w-[760px] xl:text-[52px] xl:leading-none 2xl:w-[900px] 2xl:text-6xl 3xl:w-[1035px] 3xl:text-[65px]"
+            >
+              <span class="uppercase">la cabaña</span> - Tu lugar favorito del Retiro
+              para jugar al ajedrez
+            </h1>
+            <div
+              class="flex flex-col items-center gap-4 lg:col-span-3 lg:items-start lg:justify-self-start"
+            >
+              <p
+                class="sm:text-md font-display leading-6 text-emerald-950 lg:text-left lg:text-lg lg:leading-tight xl:leading-7 2xl:text-xl"
+              >
+                Unete a cientos de personas que vienen cada dia para jugar,
+                participar en torneos y aprender de clases de maestros
+                internacionales
+              </p>
+              <ButtonPrimary title="Unirme"/>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div>
+        <div
+          class="flex h-auto flex-col items-center justify-center py-7 lg:py-10 xl:py-14 2xl:py-20"
+        >
+          <div
+            class="flex w-[90%] flex-col items-center justify-center gap-2 lg:grid lg:max-w-[1200px] lg:grid-cols-12 lg:gap-10"
+          >
+            <!-- shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] -->
+            <Image
+              src={imgFeature1}
+              alt="Old people playing chess"
+              class="rounded-2xl object-cover shadow-[12px_-12px_0_0px_#8D9B6A] sm:rounded-3xl md:shadow-[18px_-18px_0_0px_#8D9B6A] lg:col-start-1 lg:col-end-8 lg:max-h-[465px] lg:rounded-[30px] lg:shadow-[-25px_25px_0_0_#8D9B6A] border-2 border-slate-900"
+              format="avif"
+              quality="max"
+            />
+            <div class="lg:col-span-5">
+              <h2
+                class="mb-2 text-center font-display text-xl font-semibold xl:text-2xl 2xl:text-3xl"
+              >
+                Actividades
+              </h2>
+              <p class="text-justify font-body text-lg xl:text-xl 2xl:text-2xl">
+                En nuestro centro recreativo, ofrecemos una amplia variedad de
+                actividades para todas las edades y gustos. Contamos con mesas
+                de ajedrez y juegos de cartas para aquellos que disfrutan de los
+                juegos de mesa, así como una gran biblioteca con más de 2000
+                libros de diferentes temas para los amantes de la lectura. Tanto
+                los socios como los no socios son bienvenidos para disfrutar de
+                nuestras instalaciones y actividades
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex h-auto flex-col items-center justify-center py-7 lg:py-10 xl:py-14 2xl:py-20"
+        >
+          <div
+            class="flex w-[90%] flex-col items-center justify-center gap-2 lg:grid lg:max-w-[1200px] lg:grid-cols-12 lg:gap-10"
+          >
+            <Image
+              src={imgFeature2}
+              alt="People playing a tournament"
+              class="rounded-2xl object-cover shadow-[12px_-12px_0_0px_#8D9B6A] sm:rounded-3xl md:shadow-[18px_-18px_0_0px_#8D9B6A] lg:col-span-7 lg:max-h-[465px] lg:rounded-[30px] lg:shadow-[25px_25px_0_0_#8D9B6A] border-2 border-slate-900"
+              format="avif"
+              quality="max"
+            />
+            <div class="lg:order-first lg:col-span-5">
+              <h2
+                class="mb-2 text-center font-display text-xl font-semibold xl:text-2xl 2xl:text-3xl"
+              >
+                Torneos
+              </h2>
+              <p class="text-justify font-body text-lg xl:text-xl 2xl:text-2xl">
+                Nuestros torneos de ajedrez cuentan con una gran variedad de
+                premios, tanto para los ganadores como para distintas categorias
+                por edades, y han llegado a ser un gran exito, alcanzando mas de
+                150 participantes. Ademas, al ser un torneo no oficial, no se
+                necesita una licencia FIDE. Cualquiera puede participar, sea un
+                gran amante y maestro del ajedrez o un principiante aficionado,
+                por una pequena cuota de inscripcion
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex h-auto flex-col items-center justify-center py-7 lg:py-10 xl:py-14 2xl:py-20"
+        >
+          <div
+            class="flex w-[90%] flex-col items-center justify-center gap-2 lg:grid lg:max-w-[1200px] lg:grid-cols-12 lg:gap-10"
+          >
+            <Image
+              src={imgFeature3}
+              alt="A guy giving a simultaneous match to a dozen of people"
+              class="rounded-2xl shadow-[12px_-12px_0_0px_#8D9B6A] sm:rounded-3xl md:shadow-[18px_-18px_0_0px_#8D9B6A] lg:col-span-7 lg:rounded-[30px] lg:shadow-[-25px_25px_0_0_#8D9B6A] border-2 border-slate-900"
+              format="avif"
+              quality="max"
+            />
+            <div class="lg:order-last lg:col-span-5">
+              <h2
+                class="mb-2 object-cover text-center font-display text-xl font-semibold lg:max-h-[465px] xl:text-2xl 2xl:text-3xl"
+              >
+                Partidas simultaneas
+              </h2>
+              <p class="text-justify font-body text-lg xl:text-xl 2xl:text-2xl">
+                Las partidas simultáneas son una oportunidad única para que los
+                jugadores de ajedrez de todas las edades y habilidades se
+                enfrenten a un maestro en una partida amistosa. El maestro
+                jugará contra múltiples oponentes al mismo tiempo, caminando de
+                tablero en tablero, moviendo piezas y planeando su estrategia
+                contra cada jugador. Este tipo de evento no solo es divertido y
+                emocionante para los jugadores de ajedrez, sino que también es
+                educativo. Los jugadores pueden aprender de la experiencia de
+                jugar contra un maestro y observar de cerca cómo piensan y se
+                mueven en el tablero
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex h-auto flex-col items-center justify-center py-7 lg:py-10 xl:py-14 2xl:py-20"
+        >
+          <div
+            class="flex w-[90%] flex-col items-center justify-center gap-2 lg:grid lg:max-w-[1200px] lg:grid-cols-12 lg:gap-10"
+          >
+            <Image
+              src={imgFeature4}
+              alt="Foto de Yusnel Bacallao"
+              class="rounded-2xl shadow-[12px_-12px_0_0px_#8D9B6A] sm:rounded-3xl md:shadow-[18px_-18px_0_0px_#8D9B6A] lg:col-span-7 lg:rounded-[30px] lg:shadow-[25px_25px_0_0_#8D9B6A] border-2 border-slate-900"
+              format="avif"
+              quality="max"
+            />
+            <div class="lg:order-first lg:col-span-5">
+              <h2
+                class="mb-2 object-cover text-center font-display text-xl font-semibold lg:max-h-[465px] xl:text-2xl 2xl:text-3xl"
+              >
+                Clases de maestros del ajedrez
+              </h2>
+              <p class="text-justify font-body text-lg xl:text-xl 2xl:text-2xl">
+                Tambien ofrecemos clases de maestros titulados profesionales con
+                decadas de experiencia en torneos y competiciones
+                internacionales de maximo nivel. Entre ellos esta el Gran
+                maestro cubano Yusnel Bacallao, que ha recibido un gran
+                reconocimiento durante su carrera como jugador profesional
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-2 sm:p-3 lg:p-4">
+        <div
+          class="flex justify-center rounded-[35px] bg-primary-800 py-8 font-body font-semibold text-green-200 lg:py-10 xl:rounded-[50px] xl:py-12 2xl:py-14 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
+        >
+          <div
+            class="flex w-[90%] flex-col items-center justify-center gap-5 lg:max-w-[1200px]"
+          >
+            <div class="flex flex-col items-center xl:mb-6">
+              <h2
+                class="font-display text-2xl font-extrabold xl:mb-3 xl:text-3xl 2xl:text-4xl"
+              >
+                Reseñas
+              </h2>
+              <p class="text-lg xl:text-xl 2xl:text-2xl">
+                Lo que dice la gente que visita nuestro lugar
+              </p>
+            </div>
+            <div
+              class="flex flex-col items-center gap-7 lg:grid lg:grid-cols-9 lg:items-start lg:gap-x-7 lg:gap-y-10"
+            >
+              <div
+                class="col-end-5 flex flex-col items-center gap-1 text-center lg:col-start-1"
+              >
+                <Stars />
+                <p class="lg:text-lg xl:text-xl 2xl:text-2xl">
+                  “Me encanta este lugar. Muy sencillo y siempre con gente
+                  apasionada por el ajedrez. En un lugar perfecto rodeado de
+                  arboles lo que hace que en verano sea más fresco. El tablero
+                  gigante atrae siempre a los más pequeños. Si tuviera mayor
+                  apoyo económico sería sin dudas un Pilar del ajedrez en
+                  Madrid. Tiene una ubicación perfecta para ello”
+                </p>
+                <p
+                  class="2x text-sm italic lg:text-base xl:text-lg 2xl:text-xl"
+                >
+                  — Greter Amaya
+                </p>
+                <AiOutlineGoogle class="text-primary-light mt-1 text-2xl" />
+              </div>
+              <div
+                class="col-end-10 flex flex-col items-center gap-1 text-center lg:col-start-6"
+              >
+                <Stars />
+                <p class="lg:text-lg xl:text-xl 2xl:text-2xl">
+                  “Se encuentra muy cerca del palacio de cristal del parque y el
+                  ambiente es muy agradable, es una zona de picnic con mesas en
+                  las que te puedes tomar un descanso, hacer una comida merienda
+                  y jugar al ajedrez”
+                </p>
+                <p
+                  class="2x text-sm italic lg:text-base xl:text-lg 2xl:text-xl"
+                >
+                  — Victoria Arzola
+                </p>
+                <AiOutlineGoogle class="text-primary-light mt-1 text-2xl" />
+              </div>
+              <div
+                class="col-end-5 flex flex-col items-center gap-1 text-center lg:col-start-1"
+              >
+                <Stars />
+                <p class="lg:text-lg xl:text-xl 2xl:text-2xl">
+                  “Lugar muy agradable y con muchas sombras dentro del Retiro,
+                  en pleno verano se está bastante fresco. El sitio típico de
+                  Madrid para jugar al ajedrez al aire libre, puedes encontrar a
+                  jugadores muy fuertes. Casi todos los años en junio suelen
+                  realizar un torneo que es muy vistoso”
+                </p>
+                <p
+                  class="2x text-sm italic lg:text-base xl:text-lg 2xl:text-xl"
+                >
+                  — Heraclio Tobaruela
+                </p>
+                <AiOutlineGoogle class="text-primary-light mt-1 text-2xl" />
+              </div>
+              <div
+                class="col-end-10 flex flex-col items-center gap-1 text-center lg:col-start-6"
+              >
+                <Stars />
+                <p class="lg:text-lg xl:text-xl 2xl:text-2xl">
+                  “Un lugar dentro del parque del Retiro genial para jugar
+                  ajedrez o cualquier otro juego de mesa. Tienen mesas
+                  destinadas con el tablero y las fichas de ajedrez y una cabaña
+                  al lado donde puedes comprar algún picoteo, cerveza y otras
+                  bebidas”
+                </p>
+                <p
+                  class="2x text-sm italic lg:text-base xl:text-lg 2xl:text-xl"
+                >
+                  — Maria Alejandra Paz
+                </p>
+                <AiOutlineGoogle class="text-primary-light mt-1 text-2xl" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center py-5 lg:py-8 2xl:py-10">
+        <div
+          class="flex w-[90%] flex-col items-center gap-4 text-center lg:gap-5 2xl:gap-6"
+        >
+          <div class="flex flex-col gap-1 2xl:gap-2">
+            <h3
+              class="font-display text-xl font-black sm:text-2xl 2xl:text-3xl"
+            >
+              Como llegar a nuestro local?
+            </h3>
+            <p
+              class="max-w-[750px] text-lg leading-tight md:text-xl md:leading-6 2xl:text-[23px] 2xl:leading-7"
+            >
+              Ven a visitarnos! Estamos ubicados en el centro de todo el Retiro,
+              el mejor parque de España y tesoro patrimonial de Madrid
+            </p>
+          </div>
+          <div
+            class="aspect-[2/1] w-full max-w-[900px] shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] md:aspect-[7/3]"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.765489378557!2d-3.685645723469609!3d40.41404565580205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42289ffa59b9c7%3A0x514c9aebb4ecd4d!2sLa%20Caba%C3%B1a.%20Asociaci%C3%B3n%20Amigos%20del%20Retiro!5e0!3m2!1sru!2ses!4v1686333967425!5m2!1sru!2ses"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="flex flex-col lg:gap-1">
+            <h6
+              class="font-display font-black opacity-80 sm:text-lg 2xl:text-xl"
+            >
+              Direccion
+            </h6>
+            <p
+              class="text-lg leading-tight sm:text-xl sm:leading-6 2xl:text-2xl 2xl:leading-7"
+            >
+              P.º de Cuba, 6, Parque del Retiro <br /> 28009 Madrid
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex justify-center bg-primary-800 py-5 text-center leading-tight text-emerald-100 md:text-left lg:py-6 xl:py-7"
+    >
+      <div
+        class="flex w-[90%] flex-col items-center gap-3 pb-2 md:flex-row md:justify-evenly"
+      >
+        <h4 class="font-display text-xl font-black sm:text-2xl 2xl:text-3xl">
+          Contacto
+        </h4>
+        <p class="text-center sm:text-lg 2xl:text-xl">
+          Si tienes alguna pregunta o necesitas mas informacion, no dudes en
+          contactarnos
+        </p>
+        <div class="flex flex-col gap-2 2xl:gap-3">
+          <p class="sm:text-lg 2xl:text-xl">
+            Telefono y Whatsapp: <br /> 676 89 82 22
+          </p>
+          <p class="sm:text-lg 2xl:text-xl">
+            Email: <br /> escuelajedrezenelparque@gmail.com
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

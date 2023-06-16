@@ -1,0 +1,29 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+
+import Navbar from "../../layouts/Navbar";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+export async function getStaticPaths() {
+  const blogPosts = await getCollection("blog");
+
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<MainLayout>
+  <Navbar client:only="react" />
+  <Content />
+
+  <MainLayout />
+</MainLayout>

@@ -1,0 +1,48 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import NavbarSticky from "../../layouts/NavbarSticky";
+import EventsPostCard from "../../components/EventsPostCard.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths({ paginate }: any) {
+  const allPosts = await getCollection("events");
+  return paginate(allPosts, {
+    pageSize: 6,
+  });
+}
+
+const { page } = Astro.props;
+---
+
+<MainLayout title="Blog">
+  <div class="bg-neutral font-body">
+    <header class="flex h-auto flex-col items-center p-2 lg:flex-row">
+      <div
+        class="flex h-full w-full items-center justify-center rounded-[30px] bg-[#21392B] px-3 py-14 text-center text-emerald-100 mix-blend-multiply md:px-24 md:py-24 lg:py-28 2xl:py-32"
+      >
+        <div
+          class="flex w-full flex-col items-center justify-center gap-8 md:flex-row md:justify-evenly md:gap-20"
+        >
+          <h1 class="font-display text-5xl font-black md:text-6xl lg:text-7xl">
+            Eventos
+          </h1>
+          <h3
+            class="font-display text-lg font-semibold md:w-[45%] md:max-w-[430px] md:text-left md:text-xl 2xl:max-w-[500px] 2xl:text-2xl"
+          >
+            Organizamos numerosos torneos, partidas simultaneas y otros eventos.
+            No te lo pierdas!
+          </h3>
+        </div>
+      </div>
+    </header>
+    <div class=""></div>
+    <NavbarSticky client:load />
+    <div class="flex flex-row flex-wrap justify-center">
+      {
+        page.data.map((post: any) => (
+          <EventsPostCard frontmatter={post.data} pdfUrl={post.data.pdfUrl} />
+        ))
+      }
+    </div>
+  </div>
+</MainLayout>

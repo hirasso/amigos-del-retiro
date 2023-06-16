@@ -1,0 +1,41 @@
+---
+import ButtonPrimary from "../components/ButtonPrimary.astro";
+import Footer from "../layouts/Footer.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import Navbar from "../layouts/Navbar";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pagina no encontrada</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" />
+    <link rel="shortcut icon" href="/public/favicon.svg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Gabriela&family=Playfair+Display:wght@500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="h-screen w-screen bg-neutral">
+      <Navbar client:only class="top-0" />
+      <div
+        class="absolute top-[30%] sm:top-[40%] w-full flex flex-col items-center text-center gap-5 2xl:gap-6"
+      >
+        <h1
+          class="font-display text-primary-800 text-4xl 2xl:text-5xl font-black"
+        >
+          Oops, parece que la pagina que buscabas no existe
+        </h1>
+        <ButtonPrimary title="Volver" src="/" />
+      </div>
+      <div class="bottom-0 absolute w-screen">
+        <Footer />
+      </div>
+    </div>
+  </body>
+</html>

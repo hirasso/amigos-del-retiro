@@ -1,0 +1,11 @@
+{
+  "title": "Torneo de ajedrez blitz marzo 2023",
+  "subtitle": "Torneo",
+  "date": "2023-03-11",
+  "description": "Participe en nuestro Torneo de Ajedrez blitz 3 + 3, que consta de 9 rondas. Con una tarifa de inscripción de 20 euros (15 euros para los socios) y 3 premios para el podio, socios y categorias por edades",
+  "image": {
+    "src": "/src/assets/simultaneas.jpg",
+    "alt": "people playing chess"
+  },
+  "pdfUrl": "https://drive.google.com/file/d/0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx/view?hl=en&resourcekey=0-5DqnTtXPFvySMiWstuAYdA"
+}

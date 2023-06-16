@@ -1,0 +1,46 @@
+---
+const { title = "Unnamed", description } = Astro.props;
+import Footer from "./Footer.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{title}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="shortcut icon" href="/public/favicon.svg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Gabriela&family=Playfair+Display:wght@500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="transition-fade" id="swup">
+      <slot />
+      <Footer />
+    </div>
+    <script type="module" src="/swup.js"></script>
+  </body>
+</html>
+
+<style>
+  .transition-fade {
+    transition: 0.4s;
+    opacity: 1;
+  }
+
+  html.is-animating .transition-fade {
+    opacity: 0;
+  }
+</style>
+
+<!-- <style> -->
+<!--   @font-face { -->
+<!--     font-family: "Sonder"; -->
+<!--     src: url("/src/fonts/SonderRegular.otf") format("opentype"); -->
+<!--   } -->
+<!-- </style> -->

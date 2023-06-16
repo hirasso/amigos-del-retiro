@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import { formatDate } from "../utils/text-formatters";
+const { frontmatter, url } = Astro.props;
+const { title, date, description, author, image } = frontmatter;
+---
+
+<article
+  class="h-[405px] xl:h-[419px] bg-secondary-100 my-12 flex w-11/12 max-w-[400px] flex-col justify-start items-center rounded-3xl font-body text-primary-800 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] sm:mx-12"
+>
+  <Image
+    src={image.src}
+    alt={image.alt}
+    class="aspect-[5/3] h-auto w-full rounded-t-3xl object-cover"
+    format="avif"
+    quality="max"
+    height="300"
+    width="300"
+  />
+  <div
+    class="flex w-[90%] flex-col justify-start pb-6 pt-3 relative h-auto flex-grow"
+  >
+    <div class="my-[-2px] ml-2 xl:text-lg">
+      <span>{author}</span> - <span>{formatDate(date)}</span>
+    </div>
+    <h3 class="font-display text-xl font-bold xl:text-[25px]">{title}</h3>
+    <p class="ml-2 leading-tight text-lg xl:mt-1 xl:text-xl xl:leading-6">
+      {description}
+    </p>
+    <a
+      class="mt-auto w-28 rounded-lg bg-primary-800 px-3 py-0.5 text-center font-bold text-emerald-50 xl:text-lg absolute bottom-5"
+      href={url}>Leer</a
+    >
+  </div>
+</article>

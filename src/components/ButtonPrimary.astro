@@ -1,0 +1,13 @@
+---
+const { src, title } = Astro.props;
+---
+
+<div
+  class="relative w-min before:absolute before:inset-0 before:translate-x-[7px] lg:before:translate-y-[8px] before:translate-y-[-6px] before:rounded-[10px] before:bg-[#BDCE94] before:content-[''] lg:before:translate-x-[8px]"
+>
+  <a
+    href={src}
+    class="relative inline-block rounded-[10px] border border-primary-800 bg-transparent px-8 py-2 font-display text-xl font-bold transition duration-200 ease-in-out active:translate-x-1 active:translate-y-[-3px] lg:active:translate-y-1 2xl:px-9 2xl:py-2.5 2xl:text-[22px]"
+    >{title}
+  </a>
+</div>

@@ -1,0 +1,43 @@
+---
+import MainLayout from "./MainLayout.astro";
+import { Image } from "astro:assets";
+const { frontmatter } = Astro.props;
+const { title, date, description, image, author } = frontmatter;
+import Navbar from "./Navbar";
+import NavbarSticky from "./NavbarSticky";
+import { slugify, formatDate } from "../utils/text-formatters";
+---
+
+<MainLayout>
+  <NavbarSticky client:only />
+  <div class="flex justify-center bg-beige font-body text-secondary">
+    <div
+      class="flex max-w-[850px] flex-col items-center sm:mb-5 sm:w-[93%] sm:rounded-3xl sm:shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
+    >
+      <header class="sm:flex sm:flex-col sm:items-center">
+        <Image
+          src={image.src}
+          alt={image.alt}
+          width="1000"
+          height="600"
+          format="webp"
+          class="rounded-t-3xl"
+        />
+        <div class="mx-6 mb-2 sm:w-full sm:max-w-[680px] md:mt-3">
+          <div class="xl:text-xl">
+            {author} - {formatDate(date)}
+          </div>
+          <h1
+            class="mt-1 font-display text-3xl font-bold leading-8 xl:text-4xl"
+          >
+            {title}
+          </h1>
+        </div>
+      </header>
+      <!-- box-shadow: 0px 10px 20px #ADAA8D;-->
+      <div class="mx-3 mb-5 mt-3 max-w-[680px] text-justify text-lg md:text-xl">
+        <slot />
+      </div>
+    </div>
+  </div>
+</MainLayout>
